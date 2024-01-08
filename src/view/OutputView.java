@@ -2,31 +2,33 @@ package view;
 
 import domain.Cart;
 import domain.Item.Menu;
+import domain.Saled;
 
 import java.util.List;
+import java.util.Map;
 
 public class OutputView {
 
     public static void mainScreen(){
-        System.out.println("1. adeList");
-        System.out.println("2. coffeeList");
-        System.out.println("3. juiceList");
+        System.out.println("1. ade");
+        System.out.println("2. coffee");
+        System.out.println("3. juice");
         System.out.println("4.주문하기 5.취소");
     }
 
     public static void showStoreList(List<Menu> store){
         for (int i = 0; i < store.size(); i++) {
             System.out.print(i + 1 + ". " + store.get(i).getMenuName());
-            System.out.print(", 가격 : " + store.get(i).getPrice());
+            System.out.print(", 가격 W : " + store.get(i).getPrice());
             System.out.print(", 설명 : " + store.get(i).getDescription());
             System.out.println();
         }
     }
 
-    public static void showMenu(List<Menu> store, int idx){
-        System.out.print(store.get(idx-1).getMenuName());
-        System.out.print(", 가격 : " + store.get(idx-1).getPrice());
-        System.out.print(", 설명 : " + store.get(idx-1).getDescription());
+    public static void showMenu(Menu menu){
+        System.out.print(menu.getMenuName());
+        System.out.print(", 가격 W : " + menu.getPrice());
+        System.out.print(", 설명 : " + menu.getDescription());
         System.out.println();
         System.out.println("1.구매 2.취소");
     }
@@ -38,10 +40,10 @@ public class OutputView {
 
     public static void acceptOrder(List<Menu> cart, int price){
         for(Menu menu : cart){
-            System.out.println("이름 : " + menu.getMenuName() + ", 가격 : " + menu.getPrice());
+            System.out.println("이름 : " + menu.getMenuName() + ", 수량 : " + menu.count + ", 가격 : W " + menu.getPrice() * menu.count);
         }
 
-        System.out.println("최종 금액 : " + price + "\n"
+        System.out.println("최종 금액 : W " + price + "\n"
                 + "주문을 하시겠습니까?\n"
                 + "1.예 2.아니오");
     }
@@ -57,6 +59,21 @@ public class OutputView {
         System.out.println("1.예 2.아니오");
     }
 
+    public static void showSales(int sales){
+        System.out.println("[ 총 판매금액 현황 ]\n" +
+                "현재까지 총 판매된 금액은 [ W " + sales + " ] 입니다.");
+    }
+
+    public static void showSaledMenu(Map<Menu, Integer> saled){
+        for(Menu menu : saled.keySet()){
+            System.out.println("- " + menu.getMenuName() + "     | W " + menu.getPrice());
+        }
+    }
+
+    public static void askOption(){
+        System.out.println("샷을 추가하시겠습니까? + W 500" + "\n"
+         + "1.수락 2.거절");
+    }
 
 }
 
