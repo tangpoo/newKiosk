@@ -19,7 +19,7 @@ import static view.OutputView.showMenu;
 
 public class Kiosk {
 
-    private final Store store = new Store();;
+    private final Store store = new Store();
     private final Cart cart = new Cart();
     private final Saled saled = new Saled();
     private List<Menu> menuList;
