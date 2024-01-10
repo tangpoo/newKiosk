@@ -1,7 +1,7 @@
 package exception;
 
-public class WrongNumberException {
-    public static void wrongNumberException(){
-        System.out.println("잘못된 선택 입니다.");
+public class WrongNumberException extends RuntimeException{
+    public WrongNumberException() {
+        super("잘못된 선택 입니다.");
     }
 }

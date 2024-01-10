@@ -1,5 +1,8 @@
 package domain.Item;
 
+import domain.Type;
+
+import java.util.Map;
 import java.util.Objects;
 
 public abstract class Menu {
@@ -7,6 +10,7 @@ public abstract class Menu {
     public int count = 1;
     private final String name;
     private final String description;
+
 
     public Menu(String name, String description) {
         this.name = name;
@@ -21,9 +25,11 @@ public abstract class Menu {
         return description;
     }
 
+    public abstract Map<String, Integer> getOptions();
+
     public abstract int getPrice();
 
-    public abstract void addOption();
+    public abstract Type getType();
 
     @Override
     public boolean equals(Object o) {
@@ -37,7 +43,7 @@ public abstract class Menu {
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, name, description); // import java.util.Objects; 가 필요함
+        return Objects.hash(name, description);
     }
 }
 
