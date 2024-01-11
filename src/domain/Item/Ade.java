@@ -1,6 +1,9 @@
+
 package domain.Item;
 
-public class Ade extends Menu{
+import java.awt.*;
+
+public class Ade extends Menu {
     private int price;
 //    private final String option;
 
@@ -20,3 +23,4 @@ public class Ade extends Menu{
         this.price += 500;
     }
 }
+

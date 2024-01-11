@@ -1,3 +1,4 @@
+
 package domain.Item;
 
 import java.util.Objects;
@@ -40,4 +41,3 @@ public abstract class Menu {
         return Objects.hash(count, name, description); // import java.util.Objects; 가 필요함
     }
 }
-

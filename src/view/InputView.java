@@ -6,6 +6,7 @@ public class InputView {
 
     static Scanner sc = new Scanner(System.in);
     public static int userInput(){
-        return Integer.parseInt(sc.nextLine());
+        int select = Integer.parseInt(sc.nextLine());
+        return select;
     }
 }

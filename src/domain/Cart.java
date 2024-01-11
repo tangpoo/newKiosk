@@ -1,3 +1,4 @@
+
 package domain;
 
 import domain.Item.Menu;
@@ -44,4 +45,7 @@ public class Cart {
         return cart.size();
     }
 
+    public boolean sizeCheck() {
+        return cart.isEmpty();
+    }
 }
